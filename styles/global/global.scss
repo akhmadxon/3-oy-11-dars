@@ -1,0 +1,53 @@
+@import url(../footer/footer.css);
+@import url(../main/main.css);
+@import url(../header/header.css);
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	list-style: none;
+}
+@mixin text ($f-size,$f-family,$l-height){
+	font-size: $f-size;
+	font-family: $f-family;
+	line-height: $l-height;
+}
+@mixin btn ($padding) {
+	padding: $padding;
+}
+%btn-change{
+	cursor: pointer;
+	border-radius: 5px;
+	color: #fff;
+	background-color: #84A17D;
+	border: none;
+}
+.container{
+	padding-left: 100px;
+	padding-right: 100px;
+	.navbar-btn{
+		@extend %btn-change;
+		@include btn(8px 24px);
+		@include text(13px,24px);
+		letter-spacing: 0.15px;
+	}
+	.main-btn{
+		@extend %btn-change;
+		@include btn(12px 42px);
+		@include text(13px,24px);
+	}
+}
+
+@media (max-width:1000px) {
+	.container{
+		padding-left: 70px;
+		padding-right: 70px;
+	}
+}
+@media (max-width:700px) {
+	.container{
+		padding-left: 30px;
+		padding-right: 30px;
+	}
+}

@@ -1,0 +1,87 @@
+@mixin text ($f-size,$f-family,$l-height){
+	font-size: $f-size;
+	font-family: $f-family;
+	line-height: $l-height;
+}
+nav{
+	width: 100%;
+	display: grid;
+	grid-template-rows: 40px 100px;
+	.navbar-income{
+		width: 100%;
+		display: grid;
+		grid-template-columns: 24px 320px;
+		align-items: center;
+		justify-content: center;
+		gap: 5px;
+		background-color: #ADC9A6;
+		text-align: center;
+		span{
+			font-size: 15px;
+			color: #153C3C;
+		}
+		p{
+			@include text(11px,"roboto",24px);
+			color: #153C3C;
+			letter-spacing: 0.25px;
+		}
+	}
+}
+.navbar{
+	display: grid;
+	grid-template-columns: 500px 120px;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #153C3C;
+	span{
+		display: none;
+	}
+	.navbar-logo{
+		display: grid;
+		grid-template-columns: 100px 325px;
+		align-items: center;
+		gap: 75px;
+		img{
+			width: 130px;
+			height: 40px;
+			object-fit: cover;
+		}
+		ul{
+			display: grid;
+			grid-template-columns: 115px 115px 115px;
+			align-items: center;
+			li{
+				padding: 10px 25px;
+				a{
+					@include text(15px,24px);
+					color: #fff;
+					letter-spacing: 0.30px;
+					&:hover{
+						color: #ADC9A6;
+					}
+				}
+			}
+		}
+	}
+}
+@media (max-width: 1000px) {
+	.navbar{
+		ul{
+			li{
+				display: none;
+			}
+		}
+		button{
+			display: none;
+		}
+		span{
+			display: block;
+			font-size: 20px;
+			color: #fff;
+			text-align: end;
+			&:hover{
+				color: #ADC9A6;
+			}
+		}
+	}
+}
